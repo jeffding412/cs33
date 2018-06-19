@@ -1,0 +1,16 @@
+Zhengfu Ding 104928991
+
+HW #3
+Problem 6.45
+
+void transpose(int *dst, int *src, int dim)
+{
+    int i, j, x, y;
+    int block = 8;
+
+    for (i = 0; i < dim; i += block)
+    	for (j = 0; j < dim; j += block)
+	    for (x = i; (x < dim) && (x < i + block); x++)
+	    	for (y = j; (y < dim) && (y < j + block; y++)
+		    dst[y*dim + x] = src[x*dim + y]; 
+}

@@ -1,0 +1,36 @@
+Zhengfu Ding
+104928991
+4/10/2018
+
+2.71
+
+A. The problem with the code is that the number returned is not the same as the designated signed byte because of the conversion from 8 bits to 32 bits. The code needs to do sign extension.
+
+B.
+
+int xbyte(packed_t word, int bytenum)
+{
+   return (word << (3-bytenum) << 3) >> 24;
+}
+
+2.82
+
+A. Does not always yield 1
+
+When x = TMIN and y = 0, x < y. However, -x = -Tmin, which in 32-bit signed is 2147483648, but TMAX is 2147483647, so -x = 0. Therefore, -x > -y is false, thus yielding 0.
+
+B. Always yields 1
+
+((x+y) << 4) is basically x * 2^4 + y * 2^4 or 16*x + 16*y. Add a y and subtract a x, and you get a final expression of 17*y+15*x.
+
+C. Always yields 1
+
+~x = -x-1 and ~y = -y-1. According to this relationship, ~(x+y) = -(x+y)-1. Using substitution, ~(x+y) = -x+-y-1 = ~x+1+~y+1-1 = ~x+~y+1.
+
+D. Always yields 1
+
+For unsigned and signed, the bit pattern remains the same so, -(unsigned)(y-x) = -(uy-ux) = (ux-uy).
+
+E. Always yields 1
+
+The shifts x undergoes will only cause x is lose value. When x right shifts 2, it loses two bits and when it is left shifted back 2, it replaces those bits with 0's, which makes it either the same as x originally or less.
