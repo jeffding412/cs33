@@ -12,6 +12,6 @@ These are my solutions to all UCLA CS33 HW and Labs from Spring of 2018. The REA
 | ------- | ----- |
 | 0 | 1/1 |
 | 1 | 36/36 |
-| Bomb | 70/70 |
-| Attack | 95/95 |
-| OpenMP | 100/100 |
+| 2 | 70/70 |
+| 3 | 95/95 |
+| 4 | 100/100 |
